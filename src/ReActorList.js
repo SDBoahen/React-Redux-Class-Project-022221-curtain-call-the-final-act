@@ -10,8 +10,11 @@ import ReActor from "./ReActor"
 function ReActorList(props){  console.log(props) //
 
 
-    const allOurActors = props.reduxReActors.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
-    // const allOurActors = props.actorAlltoReActorList.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
+    const allOurActors = props.portalForReActors.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
+        
+
+        // Chillin w/ Shadow-Clone Sam👥
+        // const allOurActors = props.actorAlltoReActorList.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
     
 
     return(<>
@@ -28,9 +31,9 @@ function ReActorList(props){  console.log(props) //
 
 } 
 
-    const mapStateToProps =(state)=>{
+    const mapStateToProps =(state)=>{  // 🌀
 
-        return{ reduxReActors: state }
+        return{ portalForReActors: state }
 
     }
 

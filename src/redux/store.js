@@ -38,10 +38,22 @@ import { createStore } from 'redux'
       ]
 
 function reActorReducer(state = reActorAll, action){
-    // function reActorReducer(state = [ { id: 1, name: "Sam", skill: "Instructor", prefernce: "Frontend - Core React" } ], action){
+
+
+        const addNEWReActor =()=>{ 
+
+            return{
+                ...action.payload
+            }
+
+        } 
 
 
         switch(action.type){
+
+            case "ADD_REACTOR":
+                return [...state, addNEWReActor()]
+                // return [NEWReActor, ...state]
 
             default: 
                 return state
