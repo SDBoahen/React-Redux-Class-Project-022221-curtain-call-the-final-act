@@ -1,20 +1,23 @@
-// import React from "react"
 import { Component } from "react"
 
-import { addNEWReActor } from './redux/actions/index.js'
-// src/redux/actions/index.js
-// copy path relative  {{ smok }}
 
-import { connect } from 'react-redux'
+import { connect } from 'react-redux'  //  💫🌀💫
+
+import { addNEWReActor } from './redux/actions/index.js'
+    // src/redux/actions/index.js
+    // copy path relative✨👌🏾 
+// import { addNEWReActor, theBell } from './redux/actions/index.js'
+
+
 
 
 
 class ReActorNEWForm extends Component{
 
 
-    constructor(props){ super(props);
+    constructor(){ super();
         
-        this.state={ name: "" }
+        this.state={ name: "", skill: "", prefernce: "" }
 
     }
     
@@ -23,6 +26,8 @@ class ReActorNEWForm extends Component{
     
     
         console.log("IN THE FORM - Name:  ", this.state.name)
+        console.log("IN THE FORM - Skill:  ", this.state.skill)
+        console.log("IN THE FORM - Preference:  ", this.state.prefernce)
 
         
         this.props.addNEWReActor( this.state )
@@ -32,7 +37,9 @@ class ReActorNEWForm extends Component{
     }
     onChangeHandler=(e)=>{ //console.log("typing...") 
 
-        console.log(e.target.name, "  ::  ", e.target.value) 
+        console.log(e.target.name, "  ::  ", e.target.value)  //
+
+            this.alertMe(e.target.value)  // For Contrlled Fucntionaliyy 
 
         this.setState({ [e.target.name]: e.target.value })
 
@@ -53,7 +60,10 @@ class ReActorNEWForm extends Component{
 
 
     }  
-
+    alertMe=(typingInput)=>{  if(typingInput.toLowerCase() === "sam" || typingInput.toLowerCase() === "mac"){ console.log("Hey-AWESOME PERSON!😉👉✨🖱") }  }
+        // ( T && T )
+        // ( T/F || T/F )
+        // ( T/F || T/F || T/F || T/F || T/F || T/F || T/F || T/F ) = GO!
 
     ////////
 
@@ -67,9 +77,15 @@ class ReActorNEWForm extends Component{
 
             <form onSubmit={this.submitHandler}>
 
-                <input type="text" placeholder="name" value={this.state.name} onChange={this.onChangeHandler}
+                <input type="text" placeholder="Name" value={this.state.name} onChange={this.onChangeHandler}
                     name="name"
                 />
+                <input type="text" placeholder="Skill" value={this.state.skill} onChange={this.onChangeHandler}
+                    name="skill"
+                />
+                <input type="text" placeholder="Prefernce" value={this.state.prefernce} onChange={this.onChangeHandler}
+                    name="prefernce"
+                />                                
                 <input type="submit" value="🌳🍃VVVWEHLCUHM TO THE JUNGLE!🌳🍃"/>
             </form>
 
@@ -87,18 +103,25 @@ class ReActorNEWForm extends Component{
     </>);}
 
 }
+export default connect(null, { addNEWReActor })(ReActorNEWForm);  
+//  Syntax Sugar😋✨
 
-const mapDispatchToProps =(dispatch)=>{
 
-    return{
 
-        addNEWReActor: newReActor=> dispatch(addNEWReActor(newReActor))
 
-    }
+    // const mapDispatchToProps =(dispatch)=>{
 
-}
-//  *** THEN SHOW THE FANCY SINTAX SUGAR WAY ***
+    //     console.log("========    ", dispatch.action)  // 
 
-export default connect(null, mapDispatchToProps)(ReActorNEWForm);  //  < ReActorNEWForm />
-    // export default connect(null, { addNEWReActor })(ReActorNEWForm);
+    //     return{ 
+    //         // if(dispatch)
+    //         addNEWReActor: (newReActor)=> dispatch(addNEWReActor(newReActor))
+
+    //     }
+
+    // }
+
+
+// export default connect(null, mapDispatchToProps)(ReActorNEWForm);  
+//  < ReActorNEWForm />
 // export default ReActorNEWForm

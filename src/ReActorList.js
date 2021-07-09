@@ -33,7 +33,9 @@ function ReActorList(props){  console.log(props) //
 
     const mapStateToProps =(state)=>{  // 🌀
 
-        return{ portalForReActors: state }
+        return{ portalForReActors: state 
+                //portalForReActors={state}
+        }
 
     }
 

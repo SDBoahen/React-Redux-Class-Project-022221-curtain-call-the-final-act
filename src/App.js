@@ -23,7 +23,7 @@ class App extends Component{
 
       { id: 99, name: "Sam", skill: "Instructor", prefernce: "Frontend - Core React" }
           
-    ]  //  Fetched
+    ]
 
   } //  🏬[ :) ]🌀
   
