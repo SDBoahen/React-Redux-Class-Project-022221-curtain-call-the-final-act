@@ -1,6 +1,13 @@
 import { createStore } from 'redux'
 
 
+        // ,compose, applyMiddleware,
+    //} from 'redux'
+    // import thunk from 'redux-thunk'
+
+
+
+
     const reActorAll = [ 
             
         { id: 1, name: "Sam", skill: "Instructor", prefernce: "Frontend - Core React" },
@@ -50,10 +57,23 @@ function reActorReducer(state = reActorAll, action){
             }
 
         } 
+            // const blastFromThePastActLikeYouKnow =()=>{ 
+
+            //     return{
+            //         ...action.payload
+            //     }
+
+            // } 
 
 
         switch(action.type){
 
+
+            case "FETCH_US":
+                return [...action.payload]
+                //return [...state, blastFromThePastActLikeYouKnow()]
+
+            
             case "ADD_REACTOR":
                 return [...state, addNEWReActor()]
                 // return [NEWReActor(), ...state]
@@ -63,7 +83,6 @@ function reActorReducer(state = reActorAll, action){
                 return [...whosStillHereOfOurReActors]
 
             
-
             default: 
                 return state
         }
@@ -72,6 +91,7 @@ function reActorReducer(state = reActorAll, action){
     }
 
 let store = createStore(reActorReducer,
+    // compose(applyMiddleware(thunk)),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 export default store
 

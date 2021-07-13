@@ -1,3 +1,32 @@
+export const blastFromThePastActLikeYouKnow =()=>{
+
+    return (dispatch)=>{
+
+        fetch('http://localhost:3000/actors')
+        .then(resp => resp.json())
+        .then(actors => {  console.log("🌀👤💫  ", actors)  //
+    
+            dispatch({ type: "FETCH_US", payload: actors })
+    
+        })
+
+    }
+
+
+        // return fetch('http://localhost:3000/actors')
+        // .then(resp => resp.json())
+        // .then(actors => {
+
+        //     return({ type: "FETCH_US", payload: actors })
+
+        // })
+
+
+}
+
+
+
+
 export const addNEWReActor =(reActorToMake)=>{
 
     return{
@@ -53,15 +82,16 @@ export const freeReActor =(reActorToFree)=>{
 
 
 
-// export const freeReActor =(reActorToFree)=>{
 
-//     return{
- 
-//         type: "FREE_REACTOR", payload: reActorToFree
 
-//     }
 
-// }
+
+
+
+
+
+
+
 
 
 

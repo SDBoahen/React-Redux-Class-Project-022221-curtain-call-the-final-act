@@ -9,23 +9,28 @@ import ReActorList from './ReActorList';
   import Portal1 from './portal1'
 
 import ReActorNEWForm from './ReActorNEWForm';
+import BlastFromThePastActLikeYouKnowww from './BlastFromThePast';
 
 
 
 
 
 class App extends Component{ 
+  constructor(props){ super(props);
+
+    this.state={
+  
+      actorAllFrontendInsts: [
+  
+        { id: 99, name: "Sam", skill: "Instructor", prefernce: "Frontend - Core React" }
+            
+      ]
+  
+    } //  🏬[ :) ]🌀
+
+  }
   
 
-  state={
-
-    actorAllFrontendInsts: [
-
-      { id: 99, name: "Sam", skill: "Instructor", prefernce: "Frontend - Core React" }
-          
-    ]
-
-  } //  🏬[ :) ]🌀
   
 
   ////////
@@ -35,6 +40,9 @@ class App extends Component{
 
   return (<>
     <h1>Curtain Call!</h1>
+
+      <BlastFromThePastActLikeYouKnowww/>
+
       <ReActorNEWForm/>
       <ReActorList/>
       <ReActorNEWForm />
@@ -56,8 +64,8 @@ export default App;
 ////////  MAP  ////////
 //
 //  🏬[ :) ]🌀
-//                                    <App/>
-//          <ReActorNEWForm />🌀  🌀< ReActorList />  <ReActorNEWForm />🌀
+//                                     <App/>
+//          <ReActorNEWForm />🌀   🌀< ReActorList />  <ReActorNEWForm />🌀   🌀<BlastFromThePastActLikeYouKnowww/>
 //
 //
 //   ...

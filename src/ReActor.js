@@ -34,7 +34,7 @@ function ReActor(props){  console.log(props)  //
             🌿{props.a.name}🌿
         </h2>
 
-        <h5> Skill: {props.a.skill} </h5>
+        <h5> Skill: {props.a.likes} </h5>
         <h4> Preference: { props.a.prefernce } </h4>
         
         <h6> IS ALSO A REALLY AWESOME PERSON❣️✨</h6>

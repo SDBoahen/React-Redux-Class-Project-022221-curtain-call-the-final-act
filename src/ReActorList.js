@@ -11,11 +11,15 @@ function ReActorList(props){  console.log(props) //
 
 
     const allOurActors = props.portalForReActors.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
-        
+            // const allOurActors = props.reActors.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
+        // const allOurActors = "R"
 
-        // Chillin w/ Shadow-Clone Sam👥
-        // const allOurActors = props.actorAlltoReActorList.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
-    
+            {
+
+            }
+            // Chillin w/ Shadow-Clone Sam👥
+            // const allOurActors = props.actorAlltoReActorList.map(  (actor)=>{  return <ReActor key={actor.id} a={actor} /> }  )
+        
 
     return(<>
             {allOurActors}
@@ -33,8 +37,11 @@ function ReActorList(props){  console.log(props) //
 
     const mapStateToProps =(state)=>{  // 🌀
 
-        return{ portalForReActors: state 
-                //portalForReActors={state}
+        return{ 
+                portalForReActors: state.reActors
+                // portalForReActors: state 
+                    //portalForReActors={state}
+                    
         }
 
     }
